@@ -106,34 +106,49 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       bottomNavigationBar: (ResponsiveWidget.isLargeScreen(context)) ? null : CurvedNavigationBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color(0xffff765b),
         index: 2,
         items: const <Widget>[
-          Icon(
-            Icons.lightbulb,
-            size: 30,
-            color: Colors.black,
+          CircleAvatar(
+            backgroundColor: Color(0xffff765b),
+            child: Icon(
+              Icons.lightbulb,
+              size: 30,
+              color: Colors.white,
+            ),
           ),
-          Icon(
-            Icons.people,
-            size: 30,
-            color: Colors.black,
+          CircleAvatar(
+            backgroundColor: Color(0xffff765b),
+            child: Icon(
+              Icons.people,
+              size: 30,
+              color: Colors.white,
+            ),
           ),
-          Icon(
-            Icons.home,
-            size: 30,
-            color: Colors.black,
+          CircleAvatar(
+            backgroundColor: Color(0xffff765b),
+            child: Icon(
+              Icons.home,
+              size: 30,
+              color: Colors.white,
+            ),
           ),
-          Icon(
-            Icons.person,
-            size: 30,
-            color: Colors.black,
+          CircleAvatar(
+            backgroundColor: Color(0xffff765b),
+            child: Icon(
+              Icons.person,
+              size: 30,
+              color: Colors.white,
+            ),
           ),
-          Icon(
-            Icons.settings,
-            size: 30,
-            color: Colors.black,
-          ),
+          CircleAvatar(
+            backgroundColor: Color(0xffff765b),
+            child: Icon(
+              Icons.settings,
+              size: 30,
+              color: Colors.white,
+            ),
+          )
         ],
       ),
     );
