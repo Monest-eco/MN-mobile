@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:monest/utils/responsive_widget.dart';
 
 /*
 #F4EEEC
@@ -63,14 +64,15 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: Column(
-        children: const[
+        children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+            padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
             child: Image(
-              image: AssetImage("assets/images/home.png"),
+              image: const AssetImage("assets/images/home.png"),
+              height: (ResponsiveWidget.isSmallScreen(context)) ? MediaQuery.of(context).size.height * 0.3 : MediaQuery.of(context).size.height * 0.2,
             ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.fromLTRB(0, 20, 0, 10),
             child: Center(
               child: Text(
@@ -82,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
-          Center(
+          const Center(
             child: Text(
               "30€",
               style: TextStyle(
@@ -92,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
-          Center(
+          const Center(
             child: Text(
               "20kWh",
               style: TextStyle(
@@ -103,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      bottomNavigationBar: CurvedNavigationBar(
+      bottomNavigationBar: (ResponsiveWidget.isLargeScreen(context)) ? null : CurvedNavigationBar(
         backgroundColor: Colors.blue,
         index: 2,
         items: const <Widget>[
