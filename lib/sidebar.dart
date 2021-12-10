@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'redirect.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = const EdgeInsets.symmetric(horizontal: 20);
@@ -21,21 +22,25 @@ class NavigationDrawerWidget extends StatelessWidget {
                   buildMenuItem(
                     text: 'Acceuil',
                     icon: Icons.home,
+                    onClicked: () => selectedItem(context, 0),
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
                     text: 'Analyse des données',
                     icon: Icons.assessment_rounded,
+                    onClicked: () => selectedItem(context, 1),
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
                     text: 'Communauté',
                     icon: Icons.workspaces_outline,
+                    onClicked: () => selectedItem(context, 2),
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
                     text: 'Reglages',
                     icon: Icons.settings,
+                    onClicked: () => selectedItem(context, 3),
                   ),
                 ],
               ),
@@ -110,6 +115,7 @@ class NavigationDrawerWidget extends StatelessWidget {
   Widget buildMenuItem({
     required String text,
     required IconData icon,
+    VoidCallback? onClicked,
   }) {
     const color = Colors.white;
     const hoverColor = Colors.white70;
@@ -118,6 +124,7 @@ class NavigationDrawerWidget extends StatelessWidget {
       leading: Icon(icon, color: color),
       title: Text(text, style: const TextStyle(color: color)),
       hoverColor: hoverColor,
+      onTap: onClicked,
     );
   }
 
@@ -126,9 +133,18 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     switch (index) {
       case 0:
-        Navigator.pushNamed(context, '/home');
+        // Navigator.of(context).push(MaterialPageRoute(
+        //     builder: (context) => const RedirectPage(),
+        //   ));
+        Navigator.pushNamed(context, '/google');
         break;
       case 1:
+        Navigator.pushNamed(context, '/home');
+        break;
+      case 2:
+        Navigator.pushNamed(context, '/home');
+        break;
+      case 3:
         Navigator.pushNamed(context, '/home');
         break;
     }
