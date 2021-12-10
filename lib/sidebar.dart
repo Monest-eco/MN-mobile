@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'redirect.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = const EdgeInsets.symmetric(horizontal: 20);
