@@ -48,6 +48,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     var galleries = <Widget>[];
+    void _handleButtonPress() {
+      setState(() {});
+    }
 
     // Add example bar charts.
     galleries.addAll(
@@ -79,7 +82,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: _widgetBarOptions.elementAt(_selectedIndex),
       body: _widgetBodyOptions.elementAt(_selectedIndex),
-      bottomNavigationBar: (ResponsiveWidget.isLargeScreen(context)) ? null : _widgetBottomOptions.elementAt(_selectedIndex),
+      bottomNavigationBar: (ResponsiveWidget.isSmallScreen(context)) ? _widgetBottomOptions.elementAt(_selectedIndex): null,
+      floatingActionButton: FloatingActionButton(
+          onPressed: _handleButtonPress, child: const Icon(Icons.refresh)),
     );
   }
 }
