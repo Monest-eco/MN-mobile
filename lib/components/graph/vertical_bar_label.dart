@@ -1,7 +1,6 @@
 import 'dart:math';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
-import 'package:localstorage/localstorage.dart';
 
 class VerticalBarLabelChart extends StatelessWidget {
   final List<charts.Series<dynamic, String>> seriesList;
@@ -42,7 +41,7 @@ class VerticalBarLabelChart extends StatelessWidget {
     var count10 = random.nextInt(120);
     var count11 = random.nextInt(120);
     var count12 = random.nextInt(120);
-    var result = count1 + count2 + count3 + count4 + count5 + count6 + count7 + count8 + count9 + count10 + count11 + count12;
+    //var result = count1 + count2 + count3 + count4 + count5 + count6 + count7 + count8 + count9 + count10 + count11 + count12;
 
     final data = [
       OrdinalSales('00h', count1),
