@@ -1,25 +1,31 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:monest/utils/responsive_widget.dart';
-import 'sidebar.dart';
+
+import 'package:monest/pages/home_page.dart';
 
 /*
-#F4EEEC
-#AEA19E
-#DFC2BE
-#CDB6B2
-#0A0A09
-#635D5C
-#F3293B
-#B572A9
+#F4EEEC : (244, 238, 236, 1) : beige
+#AEA19E : (174, 161, 158, 1) : brown
+#DFC2BE : (223, 194, 190, 1) : pink
+#CDB6B2 : (205, 182, 178, 1) : red
+#0A0A09 : (10, 10, 9, 1) : black
+#635D5C : (99, 93, 92, 1) : grey
+#F3293B : (243, 41, 59, 1) : red
+#B572A9 : (181, 114, 169, 1) : purple
 */
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,134 +33,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const MyHomePage(title: 'Monest-eco'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // drawerEnableOpenDragGesture: false,
-      drawer: const NavigationDrawerWidget(),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        leading: const Padding(
-          padding: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
-          child: CircleAvatar(
-            radius: 20,
-            backgroundImage: AssetImage("assets/images/perso.png"),
-          ),
-        ),
-        title: const Text(
-          "Chez Soso et Richou",
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.black,
-          ),
-        ),
+      home: MyHomePage(
+        title: 'Monest-eco'
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
-            child: Image(
-              image: const AssetImage("assets/images/home.png"),
-              height: (ResponsiveWidget.isSmallScreen(context)) ? MediaQuery.of(context).size.height * 0.3 : MediaQuery.of(context).size.height * 0.2,
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(0, 20, 0, 10),
-            child: Center(
-              child: Text(
-                "Energy Consumption today",
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-          ),
-          const Center(
-            child: Text(
-              "30€",
-              style: TextStyle(
-                fontSize: 40,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          const Center(
-            child: Text(
-              "20kWh",
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-              ),
-            ),
-          ),
-        ],
-      ),
-      bottomNavigationBar: (ResponsiveWidget.isLargeScreen(context)) ? null : CurvedNavigationBar(
-        backgroundColor: const Color(0xffff765b),
-        index: 2,
-        items: const <Widget>[
-          CircleAvatar(
-            backgroundColor: Color(0xffff765b),
-            child: Icon(
-              Icons.lightbulb,
-              size: 30,
-              color: Colors.white,
-            ),
-          ),
-          CircleAvatar(
-            backgroundColor: Color(0xffff765b),
-            child: Icon(
-              Icons.people,
-              size: 30,
-              color: Colors.white,
-            ),
-          ),
-          CircleAvatar(
-            backgroundColor: Color(0xffff765b),
-            child: Icon(
-              Icons.home,
-              size: 30,
-              color: Colors.white,
-            ),
-          ),
-          CircleAvatar(
-            backgroundColor: Color(0xffff765b),
-            child: Icon(
-              Icons.person,
-              size: 30,
-              color: Colors.white,
-            ),
-          ),
-          CircleAvatar(
-            backgroundColor: Color(0xffff765b),
-            child: Icon(
-              Icons.settings,
-              size: 30,
-              color: Colors.white,
-            ),
-          )
-        ],
-      ),
+      showPerformanceOverlay: false,
     );
   }
 }
