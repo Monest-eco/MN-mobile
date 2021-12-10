@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:monest/utils/responsive_widget.dart';
+import 'sidebar.dart';
 
 /*
 #F4EEEC
@@ -40,11 +41,14 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+
 class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // drawerEnableOpenDragGesture: false,
+      drawer: const NavigationDrawerWidget(),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
