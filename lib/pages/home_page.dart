@@ -77,7 +77,6 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
     // (ResponsiveWidget.isLargeScreen(context)) ? null : 
     return Scaffold(
-      drawer: const NavigationDrawerWidget(),
       appBar: _widgetBarOptions.elementAt(_selectedIndex),
       body: _widgetBodyOptions.elementAt(_selectedIndex),
       bottomNavigationBar: (ResponsiveWidget.isLargeScreen(context)) ? null : _widgetBottomOptions.elementAt(_selectedIndex),
