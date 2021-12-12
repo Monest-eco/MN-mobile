@@ -37,6 +37,7 @@ class _MyAppState extends State<MyApp> {
         title: 'Monest-eco'
       ),
       showPerformanceOverlay: false,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

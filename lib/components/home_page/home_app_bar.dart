@@ -12,7 +12,7 @@ AppBar homeAppBar(BuildContext context) {
       ),
     ),
     title: const Text(
-      "Chez Soso et Richou",
+      "Clément Bolin",
       style: TextStyle(
         fontSize: 20,
         color: Colors.black,

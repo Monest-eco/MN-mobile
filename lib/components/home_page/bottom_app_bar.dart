@@ -5,7 +5,7 @@ CurvedNavigationBar bottomBar(BuildContext context, int index, Function onTap) {
   return CurvedNavigationBar(
     backgroundColor: const Color(0xffff765b),
     index: index,
-    onTap: onTap(index),
+    onTap: (_index) => onTap(_index),
     items: const <Widget>[
       CircleAvatar(
         backgroundColor: Color(0xffff765b),

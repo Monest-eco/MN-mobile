@@ -3,17 +3,17 @@ import 'dart:developer';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-// import 'package:monest/components/graph/vertical_bar_label.dart';
 
-import 'package:monest/utils/bottom_app_bar.dart';
 import 'package:monest/utils/responsive_widget.dart';
-import 'package:monest/utils/home_app_bar.dart';
 
+import 'package:monest/components/home_page/bottom_app_bar.dart';
+import 'package:monest/components/home_page/home_app_bar.dart';
+import 'package:monest/components/home_page/setting_app_bar.dart';
+import 'package:monest/components/home_page/settings.dart';
 import 'package:monest/components/sidebar.dart';
-import 'package:monest/components/home.dart';
-
-import 'package:monest/components/graph/bar_gallery.dart' as bar show buildGallery;
-// import 'package:monest/components/graph/drawer.dart';
+import 'package:monest/components/home_page/home.dart';
+import 'package:monest/components/graph/bar_gallery.dart' as bar
+    show buildGallery;
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({
@@ -29,6 +29,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool isDark = false;
+  bool isWifi = false;
   int _selectedIndex = 2;
   final barGalleries = bar.buildGallery();
   void _onItemTapped(int index) {
@@ -36,15 +38,24 @@ class _MyHomePageState extends State<MyHomePage> {
       _selectedIndex = index;
     });
   }
+
+  void _onSwitchedDark(bool value) {
+    setState(() {
+      isDark = value;
+    });
+  }
+
+  void _onSwitchedWifi(bool value) {
+    setState(() {
+      isWifi = value;
+    });
+  }
+
   void _setupPerformance() {
-    // Change [printPerformance] to true and set the app to release mode to
-    // print performance numbers to console. By default, Flutter builds in debug
-    // mode and this mode is slow. To build in release mode, specify the flag
-    // blaze-run flag "--define flutter_build_mode=release".
-    // The build target must also be an actual device and not the emulator.
     charts.Performance.time = (String tag) => Timeline.startSync(tag);
     charts.Performance.timeEnd = (_) => Timeline.finishSync();
   }
+
   @override
   Widget build(BuildContext context) {
     var galleries = <Widget>[];
@@ -59,14 +70,14 @@ class _MyHomePageState extends State<MyHomePage> {
       const Text('Index 2: Community'),
       home(context),
       const Text('Index 3: Me'),
-      const Text('Index 4: Settings'),
+      settings(context, _onSwitchedDark, _onSwitchedWifi, isDark, isWifi),
     ];
     List<PreferredSizeWidget> _widgetBarOptions = <PreferredSizeWidget>[
       homeAppBar(context),
       homeAppBar(context),
       homeAppBar(context),
       homeAppBar(context),
-      homeAppBar(context),
+      settingsAppBar(context),
     ];
     List<CurvedNavigationBar> _widgetBottomOptions = <CurvedNavigationBar>[
       bottomBar(context, _selectedIndex, _onItemTapped),
@@ -75,12 +86,14 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomBar(context, _selectedIndex, _onItemTapped),
       bottomBar(context, _selectedIndex, _onItemTapped),
     ];
-    // (ResponsiveWidget.isLargeScreen(context)) ? null : 
+    // (ResponsiveWidget.isLargeScreen(context)) ? null :
     return Scaffold(
       drawer: const NavigationDrawerWidget(),
       appBar: _widgetBarOptions.elementAt(_selectedIndex),
       body: _widgetBodyOptions.elementAt(_selectedIndex),
-      bottomNavigationBar: (ResponsiveWidget.isLargeScreen(context)) ? null : _widgetBottomOptions.elementAt(_selectedIndex),
+      bottomNavigationBar: (ResponsiveWidget.isLargeScreen(context))
+          ? null
+          : _widgetBottomOptions.elementAt(_selectedIndex),
     );
   }
 }
