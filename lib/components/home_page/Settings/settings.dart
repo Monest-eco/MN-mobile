@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:monest/components/home_page/Settings/setting_switch_body.dart';
+import 'package:monest/components/home_page/Settings/setting_title.dart';
+import 'package:monest/components/home_page/Settings/settings_body.dart';
 
-Widget settings(BuildContext context, Function darkChange, Function wifiChange,
-    bool dark, bool wifi) {
+Widget settings(BuildContext context, Function darkChange, Function wifiChange, bool dark, bool wifi) {
+  const name = "Clément Bolin";
+  const image = 'assets/images/perso.png';
+  const email = 'clement.bolin@epitech.eu';
   return SingleChildScrollView(
     child: Center(
       child: Column(
@@ -10,13 +15,13 @@ Widget settings(BuildContext context, Function darkChange, Function wifiChange,
             padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
             child: CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage('assets/images/perso.png'),
+              backgroundImage: AssetImage(image),
             ),
           ),
           const Padding(
             padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
             child: Text(
-              'Clément Bolin',
+              name,
               style: TextStyle(
                 fontSize: 26,
                 fontWeight: FontWeight.w500,
@@ -26,7 +31,7 @@ Widget settings(BuildContext context, Function darkChange, Function wifiChange,
           const Padding(
             padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
             child: Text(
-              'clement.bolin@epitech.eu',
+              email,
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
           ),
@@ -101,73 +106,6 @@ Widget settings(BuildContext context, Function darkChange, Function wifiChange,
               'Version 0.1.2',
               style: TextStyle(
                 fontSize: 12,
-                color: Colors.grey,
-              ),
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
-}
-
-SwitchListTile settingSwitchBody(
-    String name, IconData icon, bool value, Function funct) {
-  return SwitchListTile(
-    activeTrackColor: const Color(0xffff765b),
-    activeColor: const Color(0xffff765b),
-    inactiveTrackColor: Colors.grey,
-    title: Text(
-      name,
-      style: const TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w500,
-      ),
-    ),
-    value: value,
-    onChanged: (bool value) {
-      funct(value);
-    },
-    secondary: Icon(icon),
-  );
-}
-
-ListTile settingsBody(IconData leadingIcon, String name, bool isArrow) {
-  return ListTile(
-    leading: Icon(
-      leadingIcon,
-      color: Colors.grey,
-    ),
-    title: Text(
-      name,
-      style: const TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w500,
-      ),
-    ),
-    trailing: Icon(
-      isArrow ? Icons.arrow_forward_ios_sharp : null,
-      size: 20,
-    ),
-  );
-}
-
-Card settingTitle(String title, double top) {
-  return Card(
-    elevation: 0,
-    color: const Color.fromARGB(246, 246, 246, 255),
-    margin: EdgeInsets.fromLTRB(0, top, 0, 0),
-    child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 4, 0, 4),
-            child: Text(
-              title,
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
                 color: Colors.grey,
               ),
             ),

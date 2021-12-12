@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 
 import 'package:monest/utils/responsive_widget.dart';
 
-import 'package:monest/components/home_page/bottom_app_bar.dart';
-import 'package:monest/components/home_page/home_app_bar.dart';
-import 'package:monest/components/home_page/setting_app_bar.dart';
-import 'package:monest/components/home_page/settings.dart';
+import 'package:monest/components/home_page/Home/bottom_app_bar.dart';
+import 'package:monest/components/home_page/Home/home_app_bar.dart';
+import 'package:monest/components/home_page/Settings/setting_app_bar.dart';
+import 'package:monest/components/home_page/Settings/settings.dart';
 import 'package:monest/components/sidebar.dart';
-import 'package:monest/components/home_page/home.dart';
+import 'package:monest/components/home_page/Home/home.dart';
 import 'package:monest/components/graph/bar_gallery.dart' as bar
     show buildGallery;
 
