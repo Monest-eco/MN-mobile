@@ -37,11 +37,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
   void _setupPerformance() {
-    // Change [printPerformance] to true and set the app to release mode to
-    // print performance numbers to console. By default, Flutter builds in debug
-    // mode and this mode is slow. To build in release mode, specify the flag
-    // blaze-run flag "--define flutter_build_mode=release".
-    // The build target must also be an actual device and not the emulator.
     charts.Performance.time = (String tag) => Timeline.startSync(tag);
     charts.Performance.timeEnd = (_) => Timeline.finishSync();
   }
@@ -52,7 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // Add example bar charts.
     galleries.addAll(
         barGalleries.map((gallery) => gallery.buildGalleryListTile(context)));
-
     _setupPerformance();
     List<Widget> _widgetBodyOptions = <Widget>[
       const Text('Index 1: Conseil'),
