@@ -10,7 +10,7 @@ import 'package:monest/components/home_page/Home/bottom_app_bar.dart';
 import 'package:monest/components/home_page/Home/home_app_bar.dart';
 import 'package:monest/components/home_page/Settings/setting_app_bar.dart';
 import 'package:monest/components/home_page/Settings/settings.dart';
-import 'package:monest/components/sidebar.dart';
+import 'package:monest/components/sidebar/sidebar.dart';
 import 'package:monest/components/home_page/Home/home.dart';
 import 'package:monest/components/graph/bar_gallery.dart' as bar
     show buildGallery;
