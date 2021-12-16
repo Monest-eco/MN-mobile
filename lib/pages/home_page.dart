@@ -1,16 +1,12 @@
 import 'dart:developer';
-
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-
 import 'package:monest/utils/responsive_widget.dart';
-
 import 'package:monest/components/home_page/Home/bottom_app_bar.dart';
 import 'package:monest/components/home_page/Home/home_app_bar.dart';
 import 'package:monest/components/home_page/Settings/setting_app_bar.dart';
 import 'package:monest/components/home_page/Settings/settings.dart';
-import 'package:monest/components/sidebar/sidebar.dart';
 import 'package:monest/components/home_page/Home/home.dart';
 import 'package:monest/components/graph/bar_gallery.dart' as bar
     show buildGallery;
@@ -63,7 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // Add example bar charts.
     galleries.addAll(
         barGalleries.map((gallery) => gallery.buildGalleryListTile(context)));
-
     _setupPerformance();
     List<Widget> _widgetBodyOptions = <Widget>[
       const Text('Index 1: Conseil'),
@@ -86,14 +81,11 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomBar(context, _selectedIndex, _onItemTapped),
       bottomBar(context, _selectedIndex, _onItemTapped),
     ];
-    // (ResponsiveWidget.isLargeScreen(context)) ? null :
+
     return Scaffold(
-      drawer: const NavigationDrawerWidget(),
       appBar: _widgetBarOptions.elementAt(_selectedIndex),
       body: _widgetBodyOptions.elementAt(_selectedIndex),
-      bottomNavigationBar: (ResponsiveWidget.isLargeScreen(context))
-          ? null
-          : _widgetBottomOptions.elementAt(_selectedIndex),
+      bottomNavigationBar: (ResponsiveWidget.isSmallScreen(context)) ? _widgetBottomOptions.elementAt(_selectedIndex): null,
     );
   }
 }
