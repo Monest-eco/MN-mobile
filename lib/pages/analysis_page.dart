@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:monest/components/analysis/cards/cards.dart';
+import 'package:monest/components/home_page/Home/home_app_bar.dart';
 
 class Analysis extends StatefulWidget {
   const Analysis({ Key? key }) : super(key: key);
@@ -14,12 +15,12 @@ class _AnalysisState extends State<Analysis> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: homeAppBar(context),
       body: Padding(
       padding: const EdgeInsets.all(20.0),
       child: SingleChildScrollView(
         child: Column(
-          children: 
-            cards,
+          children: cards,
         ),
       ),
       )
