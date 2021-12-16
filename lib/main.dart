@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       routes: {
         '/': (context) => MyHomePage(title: 'Monest-eco'),
-        '/analysis': (context) => Analysis(),
+        '/analysis': (context) => const Analysis(),
 
 
       },

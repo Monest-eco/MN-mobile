@@ -27,7 +27,7 @@ class MyCards extends StatelessWidget {
                 center: const Image(image: AssetImage('./assets/images/facture2.png'), width: 30)
               ),
               title: const Text(
-                "La consomation de votre frigo est de : " + "70%",
+                "La consomation de votre frigo est de : 70%",
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
