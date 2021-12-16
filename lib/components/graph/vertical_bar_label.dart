@@ -46,7 +46,6 @@ class VerticalBarLabelChart extends StatelessWidget {
     var time = DateTime.now();
     int hour = (time.hour ~/ 2) * 2;
 
-    print(hour);
     final data = [
       OrdinalSales('00h', count1, 0),
       OrdinalSales('2h', count2, 2),
