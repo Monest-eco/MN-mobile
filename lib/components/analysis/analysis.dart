@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Scaffold chart(BuildContext context) {
+Scaffold analysis(BuildContext context) {
   return const Scaffold(
     body: Center(
       child: CustomPaint( // this will add custom painter after child
