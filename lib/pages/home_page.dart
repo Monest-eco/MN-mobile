@@ -59,7 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // Add example bar charts.
     galleries.addAll(
         barGalleries.map((gallery) => gallery.buildGalleryListTile(context)));
-
     _setupPerformance();
     List<Widget> _widgetBodyOptions = <Widget>[
       const Text('Index 1: Conseil'),
