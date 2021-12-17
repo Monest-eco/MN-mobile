@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:monest/pages/analysis_page.dart';
 import 'package:monest/pages/home_page.dart';
 
 /*
@@ -33,9 +33,13 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: MyHomePage(
-        title: 'Monest-eco'
-      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => MyHomePage(title: 'Monest-eco'),
+        '/analysis': (context) => const Analysis(),
+
+
+      },
       showPerformanceOverlay: false,
       debugShowCheckedModeBanner: false,
     );

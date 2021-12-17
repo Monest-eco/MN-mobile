@@ -135,10 +135,10 @@ class NavigationDrawerWidget extends StatelessWidget {
         // Navigator.of(context).push(MaterialPageRoute(
         //     builder: (context) => const RedirectPage(),
         //   ));
-        Navigator.pushNamed(context, '/google');
+        Navigator.pushNamed(context, '/home');
         break;
       case 1:
-        Navigator.pushNamed(context, '/home');
+        Navigator.pushNamed(context, '/analysis');
         break;
       case 2:
         Navigator.pushNamed(context, '/home');

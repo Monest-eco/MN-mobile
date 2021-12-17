@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:monest/components/graph/vertical_bar_label.dart';
-import 'package:monest/components/sidebar.dart';
+import 'package:monest/components/sidebar/sidebar.dart';
 import 'package:monest/utils/responsive_widget.dart';
 final routes = List.generate(20, (i) => 'test $i');
 Row home(BuildContext context) {

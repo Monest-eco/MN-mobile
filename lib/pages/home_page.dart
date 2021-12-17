@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:monest/pages/analysis_page.dart';
 import 'package:monest/utils/responsive_widget.dart';
 import 'package:monest/components/home_page/Home/bottom_app_bar.dart';
 import 'package:monest/components/home_page/Home/home_app_bar.dart';
@@ -61,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         barGalleries.map((gallery) => gallery.buildGalleryListTile(context)));
     _setupPerformance();
     List<Widget> _widgetBodyOptions = <Widget>[
-      const Text('Index 1: Conseil'),
+      const Analysis(),
       const Text('Index 2: Community'),
       home(context),
       const Text('Index 3: Me'),
