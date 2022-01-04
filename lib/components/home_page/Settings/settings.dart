@@ -51,7 +51,7 @@ Widget settings(BuildContext context, Function darkChange, Function wifiChange, 
                 mainAxisSize: MainAxisSize.min,
                 children: const [
                   Text(
-                    'Edit Profile',
+                    'Modifier profile',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
@@ -68,20 +68,20 @@ Widget settings(BuildContext context, Function darkChange, Function wifiChange, 
               ),
             ),
           ),
-          settingTitle("SECURITY", 20),
+          settingTitle("Securité", 20),
           settingsBody(
             Icons.lock,
-            "Change Password",
+            "Changer son mot de passse",
             true,
           ),
           settingsBody(
             Icons.download,
-            "Download Data",
+            "Télécharger les données",
             true,
           ),
           settingsBody(
             Icons.delete,
-            "Delete Data",
+            "Supprimer les données",
             true,
           ),
           settingTitle("PREFERENCES", 0),
@@ -91,13 +91,13 @@ Widget settings(BuildContext context, Function darkChange, Function wifiChange, 
             true,
           ),
           settingSwitchBody(
-              "Dark Mode", Icons.dark_mode_outlined, dark, darkChange),
+              "Mode Sombre", Icons.dark_mode_outlined, dark, darkChange),
           settingSwitchBody(
-              "Only Download via Wi-Fi", Icons.wifi, wifi, wifiChange),
-          settingTitle("LOGIN", 0),
+              "Téléchargement via Wi-Fi seulement", Icons.wifi, wifi, wifiChange),
+          settingTitle("Connexion", 0),
           settingsBody(
             Icons.logout,
-            "Log Out",
+            "Déconnexion",
             false,
           ),
           const Padding(

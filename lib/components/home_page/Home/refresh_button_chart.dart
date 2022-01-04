@@ -7,6 +7,12 @@ class RefreshButton extends StatefulWidget {
   State<RefreshButton> createState() => _RefreshButtonState();
 }
 
+
+ //*
+ /* This component is a button who reload a chart
+ */
+
+
 class _RefreshButtonState extends State<RefreshButton> {
 
   @override

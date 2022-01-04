@@ -63,9 +63,9 @@ class _MyHomePageState extends State<MyHomePage> {
     _setupPerformance();
     List<Widget> _widgetBodyOptions = <Widget>[
       const Analysis(),
-      const Text('Index 2: Community'),
+      const Text('Index 2: Communauté'),
       home(context),
-      const Text('Index 3: Me'),
+      const Text('Index 3: Mon profile'),
       settings(context, _onSwitchedDark, _onSwitchedWifi, isDark, isWifi),
     ];
     List<PreferredSizeWidget> _widgetBarOptions = <PreferredSizeWidget>[

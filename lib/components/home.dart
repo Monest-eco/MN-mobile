@@ -19,7 +19,7 @@ SingleChildScrollView home(BuildContext context) {
           padding: EdgeInsets.fromLTRB(0, 20, 0, 10),
           child: Center(
             child: Text(
-              "Energy Consumption today",
+              "Énergie consommée aujourd'hui",
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.black,

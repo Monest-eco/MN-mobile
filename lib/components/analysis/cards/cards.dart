@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 
+/*
+ * The MyCards class is use in the Analysis page to show cards component
+ * about the consomation 
+ **/
+
+
 class MyCards extends StatelessWidget {
   const MyCards({
     Key? key,

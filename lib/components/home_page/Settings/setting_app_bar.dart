@@ -5,7 +5,7 @@ AppBar settingsAppBar(BuildContext context) {
     elevation: 0,
     backgroundColor: Colors.white,
     title: const Text(
-      "Settings",
+      "Paramètres",
       style: TextStyle(
         fontSize: 20,
         color: Colors.black,

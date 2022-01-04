@@ -37,7 +37,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
-                    text: 'Reglages',
+                    text: 'Réglages',
                     icon: Icons.settings,
                     onClicked: () => selectedItem(context, 3),
                   ),
@@ -132,9 +132,6 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     switch (index) {
       case 0:
-        // Navigator.of(context).push(MaterialPageRoute(
-        //     builder: (context) => const RedirectPage(),
-        //   ));
         Navigator.pushNamed(context, '/home');
         break;
       case 1:
