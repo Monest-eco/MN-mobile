@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 AppBar homeAppBar(BuildContext context) {
+  const name = "Clément Bolin";
+  const image = "assets/images/perso.png";
   return AppBar(
     elevation: 0,
     backgroundColor: Colors.white,
@@ -8,11 +10,11 @@ AppBar homeAppBar(BuildContext context) {
       padding: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
       child: CircleAvatar(
         radius: 20,
-        backgroundImage: AssetImage("assets/images/perso.png"),
+        backgroundImage: AssetImage(image),
       ),
     ),
     title: const Text(
-      "Chez Soso et Richou",
+      name,
       style: TextStyle(
         fontSize: 20,
         color: Colors.black,

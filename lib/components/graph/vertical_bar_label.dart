@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class VerticalBarLabelChart extends StatelessWidget {
   final List<charts.Series<dynamic, String>> seriesList;
   final bool animate;
+  final int index = 3;
 
   // ignore: use_key_in_widget_constructors
   const VerticalBarLabelChart(this.seriesList, {this.animate = false});
@@ -29,42 +30,44 @@ class VerticalBarLabelChart extends StatelessWidget {
   /// Create random data.
   static List<charts.Series<OrdinalSales, String>> _createRandomData() {
     final random = Random();
-    var count1 = random.nextInt(120);
-    var count2 = random.nextInt(120);
-    var count3 = random.nextInt(120);
-    var count4 = random.nextInt(120);
-    var count5 = random.nextInt(120);
-    var count6 = random.nextInt(120);
-    var count7 = random.nextInt(120);
-    var count8 = random.nextInt(120);
-    var count9 = random.nextInt(120);
-    var count10 = random.nextInt(120);
-    var count11 = random.nextInt(120);
-    var count12 = random.nextInt(120);
+    var count1 = random.nextInt(100);
+    var count2 = random.nextInt(100);
+    var count3 = random.nextInt(100);
+    var count4 = random.nextInt(100);
+    var count5 = random.nextInt(100);
+    var count6 = random.nextInt(100);
+    var count7 = random.nextInt(100);
+    var count8 = random.nextInt(100);
+    var count9 = random.nextInt(100);
+    var count10 = random.nextInt(100);
+    var count11 = random.nextInt(100);
+    var count12 = random.nextInt(100);
     //var result = count1 + count2 + count3 + count4 + count5 + count6 + count7 + count8 + count9 + count10 + count11 + count12;
+    var time = DateTime.now();
+    int hour = (time.hour ~/ 2) * 2;
 
     final data = [
-      OrdinalSales('00h', count1),
-      OrdinalSales('2h', count2),
-      OrdinalSales('4h', count3),
-      OrdinalSales('6h', count4),
-      OrdinalSales('8h', count5),
-      OrdinalSales('10h', count6),
-      OrdinalSales('12h', count7),
-      OrdinalSales('14h', count8),
-      OrdinalSales('16h', count9),
-      OrdinalSales('18h', count10),
-      OrdinalSales('20h', count11),
-      OrdinalSales('22h', count12),
+      OrdinalSales('00h', count1, 0),
+      OrdinalSales('2h', count2, 2),
+      OrdinalSales('4h', count3, 4),
+      OrdinalSales('6h', count4, 6),
+      OrdinalSales('8h', count5, 8),
+      OrdinalSales('10h', count6, 10),
+      OrdinalSales('12h', count7, 12),
+      OrdinalSales('14h', count8, 14),
+      OrdinalSales('16h', count9, 16),
+      OrdinalSales('18h', count10, 18),
+      OrdinalSales('20h', count11, 20),
+      OrdinalSales('22h', count12, 22),
     ];
-
     return [
       charts.Series<OrdinalSales, String>(
           id: 'Graph',
           domainFn: (OrdinalSales sales, _) => sales.year,
           measureFn: (OrdinalSales sales, _) => sales.sales,
           data: data,
-          // Set a label accessor to control the text of the bar label.
+          fillColorFn: (OrdinalSales sales, index) =>
+              (sales.hour == hour) ? charts.Color.fromHex(code: '#ff1481'): charts.Color.fromHex(code: '#ffb092'),
           labelAccessorFn: (OrdinalSales sales, _) => sales.sales.toString()),
     ];
   }
@@ -95,10 +98,10 @@ class VerticalBarLabelChart extends StatelessWidget {
   /// Create one series with sample hard coded data.
   static List<charts.Series<OrdinalSales, String>> _createSampleData() {
     final data = [
-      OrdinalSales('2014', 5),
-      OrdinalSales('2015', 25),
-      OrdinalSales('2016', 100),
-      OrdinalSales('2017', 75),
+      OrdinalSales('2014', 5, 2014),
+      OrdinalSales('2015', 25, 2015),
+      OrdinalSales('2016', 100, 2016),
+      OrdinalSales('2017', 75, 2017),
     ];
 
     return [
@@ -118,6 +121,7 @@ class VerticalBarLabelChart extends StatelessWidget {
 class OrdinalSales {
   final String year;
   final int sales;
+  final int hour;
 
-  OrdinalSales(this.year, this.sales);
+  OrdinalSales(this.year, this.sales, this.hour);
 }

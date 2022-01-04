@@ -1,9 +1,9 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/Users/richard/development/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/richard/Documents/Epitech/EIP/monest"
+export "FLUTTER_ROOT=/Users/matissepage/Downloads/flutter"
+export "FLUTTER_APPLICATION_PATH=/Users/matissepage/Documents/Workspace/EIP/monest"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
-export "FLUTTER_TARGET=/Users/richard/Documents/Epitech/EIP/monest/lib/main.dart"
+export "FLUTTER_TARGET=/Users/matissepage/Documents/Workspace/EIP/monest/lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"
 export "FLUTTER_BUILD_NUMBER=1"
@@ -11,4 +11,4 @@ export "DART_DEFINES=Zmx1dHRlci5pbnNwZWN0b3Iuc3RydWN0dXJlZEVycm9ycz10cnVl,RkxVVF
 export "DART_OBFUSCATION=false"
 export "TRACK_WIDGET_CREATION=true"
 export "TREE_SHAKE_ICONS=false"
-export "PACKAGE_CONFIG=/Users/richard/Documents/Epitech/EIP/monest/.dart_tool/package_config.json"
+export "PACKAGE_CONFIG=/Users/matissepage/Documents/Workspace/EIP/monest/.dart_tool/package_config.json"
